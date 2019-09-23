@@ -16,15 +16,13 @@ def jugar():
         if adivinanza == numero_aleatorio:
             print("Adivinaste!")
             break
-        else:
-            intentos += 1
-            if numero_aleatorio > adivinanza:
+        elif numero_aleatorio > adivinanza:
                 print("Fallaste, mi número es mayor")
-            else:
+        else:
                 print("Fallaste, mi número es menor")
-
-            print("Fallaste, inténtalo de nuevo")
-print("Se te acabron los intentos")
-print("Gracias por jugar")
+        intentos += 1 
+    else:
+        print("Se te acabron los intentos")
+        print("Gracias por jugar")
 
 jugar()
