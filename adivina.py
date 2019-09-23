@@ -1,8 +1,5 @@
-#Dar 5 vidas al usuario
-#Dar pistas, si el numero es mayor o menor 
+
 #Queremos poner la opción de volver a jugar generando número diferente
-
-
 import random
 def jugar():
     intentos = 0
@@ -12,19 +9,24 @@ def jugar():
     print("Adivina cual es")
     print("Solamente tienes 5 intentos")
     while intentos < 5:
-        adivinanza = int(input("El número es: "))
-        if adivinanza == numero_aleatorio:
-            print("Adivinaste!")
-            jugar_nuevamente = input("Jugar de nuevo? si/no ")
-            if jugar_nuevamente.lower() == "si":
-                jugar()
-            else:
-                break
-        elif numero_aleatorio > adivinanza:
-                print("Fallaste, mi número es mayor")
+        try:
+            adivinanza = int(input("El número es: "))
+        except ValueError:
+            print("Ese no es un número válido")
         else:
-                print("Fallaste, mi número es menor")
-        intentos += 1 
+                if adivinanza == numero_aleatorio:
+                    print("Adivinaste!")
+                    jugar_nuevamente = input("Jugar de nuevo? si/no ")
+                    if jugar_nuevamente.lower() == "si":
+                        jugar()
+                    else:
+                        break
+                elif numero_aleatorio > adivinanza:
+                        print("Fallaste, mi número es mayor")
+                else:
+                        print("Fallaste, mi número es menor")
+                intentos += 1 
+                print("Intento {}/5".format(intentos))
     else:
         print("Se te acabron los intentos")
         print("Gracias por jugar")
