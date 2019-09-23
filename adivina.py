@@ -15,5 +15,10 @@ while True:
         print("Adivinaste!")
         break
     else:
+        if numero_aleatorio > adivinanza:
+            print("Fallaste, mi número es mayor")
+        else:
+            print("Fallaste, mi número es menor")
+
         print("Fallaste, inténtalo de nuevo")
 print("Gracias por jugar")
