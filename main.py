@@ -4,22 +4,27 @@ print(Player.hit_points)
 print(Player.mana)
 print(Player.vocation)
 
+
 sorcerer = Player()
 sorcerer.hit_points = 40
 sorcerer.mana = 80
 sorcerer.vocation = "Sorcerer"
+sorcerer.hechizo = "ice barrage"
 
 print("El sorcerer tiene: ")
 print(sorcerer.hit_points)
 print(sorcerer.mana)
 print(sorcerer.vocation)
+print(sorcerer.lanzar_hechizo())
 
 knight = Player()
 knight.hit_points = 80
 knight.mana = 20
 knight.vocation = "Knight"
+knight.hechizo = "exori"
 
 print("El knight tiene:")
 print(knight.hit_points)
 print(knight.mana)
 print(knight.vocation)
+print(knight.lanzar_hechizo())
