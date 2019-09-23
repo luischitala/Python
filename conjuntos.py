@@ -12,6 +12,30 @@ def interseccion_conjuntos(conjunto_a,conjunto_b):
     print("La intersección de A y B es: {}".format(conjunto_a.intersection(conjunto_b)))
     print()
 
+def diferencia_conjuntos(conjunto_a,conjunto_b):
+    print("Elije la diferencia que quieres reaizar: ")
+    print("1 A - B")
+    print("2 B - A")
+    try:
+        operacion = int(input(":  "))
+    except ValueError:
+        print("\nIntroduce 1 o 2 primo\n")
+        diferencia_conjuntos(conjunto_a,conjunto_b)
+    else:
+        if operacion == 1:
+            print("La diferencia de A y B es: {}".format(conjunto_a.difference(conjunto_b)))
+        elif operacion == 2:
+            print("La diferencia de B y A es: {}".format(conjunto_b.difference(conjunto_a)
+            ))
+        else:
+            print("No reconozco esa operación. Intenta de nuevo")
+            diferencia_conjuntos(conjunto_a,conjunto_b)
+        print()
+
+def diferencia_simetrica_conjuntos(conjunto_a,conjunto_b):
+    print()
+    print("La diferencia simetrica de A y B es: {}".format(conjunto_a.symmetric_difference(conjunto_b)))
+    print()
 
 def ver_instrucciones():
     print("Operaciones que puedes realizar: ")
@@ -34,20 +58,25 @@ def calculadora_conjuntos():
 
 
     while True:
-        operacion = int(input(":"))
-        if operacion == 1:
-            union_conjuntos(conjunto_a,conjunto_b)
-        elif operacion == 2:
-            interseccion_conjuntos(conjunto_a,conjunto_b)
-        elif operacion == 3:
-            print("Diferencia")
-        elif operacion == 4:
-            print("Diferencia simétrica")
-        elif operacion == 5:
-            ver_instrucciones()
-        elif operacion == 6:
-            break
+        try:
+            operacion = int(input(":"))
+        except ValueError:
+            print("Introduce un número del 1 al 6")
         else:
-            print("No reconozco esa operación, Intenta de nuevo primo")
+            if operacion == 1:
+                union_conjuntos(conjunto_a,conjunto_b)
+            elif operacion == 2:
+                interseccion_conjuntos(conjunto_a,conjunto_b)
+            elif operacion == 3:
+                diferencia_conjuntos(conjunto_a,conjunto_b)
+            elif operacion == 4:
+                diferencia_simetrica_conjuntos(conjunto_a,conjunto_b)
+            elif operacion == 5:
+                ver_instrucciones()
+            elif operacion == 6:
+                print("Gracias por utilizar nuestra aplicación, te esperamos pronto")
+                break
+            else:
+                print("No reconozco esa operación, Intenta de nuevo primo")
 
 calculadora_conjuntos()
