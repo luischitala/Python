@@ -15,7 +15,11 @@ def jugar():
         adivinanza = int(input("El número es: "))
         if adivinanza == numero_aleatorio:
             print("Adivinaste!")
-            break
+            jugar_nuevamente = input("Jugar de nuevo? si/no ")
+            if jugar_nuevamente.lower() == "si":
+                jugar()
+            else:
+                break
         elif numero_aleatorio > adivinanza:
                 print("Fallaste, mi número es mayor")
         else:
@@ -24,5 +28,10 @@ def jugar():
     else:
         print("Se te acabron los intentos")
         print("Gracias por jugar")
+        jugar_nuevamente = input("Jugar de nuevo? si/no ")
+
+        if jugar_nuevamente.lower() == "si":
+            jugar()
+
 
 jugar()
