@@ -17,3 +17,6 @@ print(paladin)
 druid = player.Druid(hit_points = 50,mana = 70,vocation="Druid",spell="Fire wave")
 print(druid)
 
+goblin = player.Goblin(hit_points = 20, mana = 10, race = "Goblin")
+print(goblin)
+
