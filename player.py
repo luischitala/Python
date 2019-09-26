@@ -4,15 +4,19 @@ class Player(object):
     movement_speed = "50"
     
     def __init__(self,**kwargs):
+        self.name = input("Elige tu nombre: ")
         self.hit_points = kwargs.get("hit_points",50)
         self.mana = kwargs.get("mana",50)
 
     def __str__(self):
-        return "El {} tiene: {} hitpoints y {} mana, puede lanzar {} y corre a {}".format(self.vocation,
+        return "{} es un {} tiene: {} hitpoints y {} mana, puede lanzar {} y corre a {}".format(self.name,
+                                self.vocation,
                                 self.hit_points,self.mana, self.cast_spell(),self.movement_speed)
 
     def cast_spell(self):
         return self.spell
+
+    
 
 class Sorcerer(Player):
     vocation = "Sorcerer"
