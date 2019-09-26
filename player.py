@@ -21,3 +21,12 @@ class Knight(Player):
     movement_speed = "50"
 #métodos funciones dentro de la clases
     #self es la instancia de la clase
+
+class Druid(Player):
+    vocation = "Druid"
+    spell = "Blood Barrage"
+    movement_speed = "20"
+class Paladin(Player):
+    vocation = "Paladin"
+    spell = "Magic Dart"
+    movement_speed = "80"
