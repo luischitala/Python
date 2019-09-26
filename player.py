@@ -7,6 +7,9 @@ class Player(object):
         self.hit_points = kwargs.get("hit_points",50)
         self.mana = kwargs.get("mana",50)
 
+    def __str__(self):
+        return "El {} tiene: {} hitpoints y {} mana, puede lanzar {} y corre a {}".format(self.vocation,
+                                self.hit_points,self.mana, self.cast_spell(),self.movement_speed)
 
     def cast_spell(self):
         return self.spell
