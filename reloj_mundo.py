@@ -7,19 +7,25 @@ def mostrar_menu():
     print("1 Ver la hora")
     print("2 Ver la fecha y hora")
     print("3 ver la hora en Nueva York")
-    print("4 Ver la hora en San Francisco")
-    print("5 Ver las instrucciones nuevamente")
-    print("6 Para salir")
+    print("4 Ver la hora en Japón")
+    print("5 Ver la hora en Francia")
+    print("6 Ver la hora en San Francisco")
+    print("7 Ver las instrucciones nuevamente")
+    print("8 Para salir")
 
 def ver_hora(zona_horaria):
     if zona_horaria == -6:
         zona = "Tiempo Central"
     elif zona_horaria == -8:
         zona = "Tiempo del Pacífico"
+    elif zona_horaria == +9:
+        zona = "en Japón"
+    elif zona_horaria == +2:
+        zona = "en Francia"
     else:
         zona = "Tiempo del Este"
 
-    formato = "%H:%M:%S"
+    formato = "%H:%M:%S %p"
     zona_horaria = datetime.timezone(datetime.timedelta(hours=zona_horaria))
     hora_actual = datetime.datetime.now(zona_horaria).time()
     hora_formateada = hora_actual.strftime(formato)
@@ -40,10 +46,14 @@ def ver_reloj():
         elif operacion == "3":
             ver_hora(-5)
         elif operacion == "4":
-            ver_hora(-8)
+            ver_hora(+9)
         elif operacion == "5":
-            mostrar_menu()
+            ver_hora(+2)
         elif operacion == "6":
+            ver_hora(-8)
+        elif operacion == "7":
+            mostrar_menu()
+        elif operacion == "8":
             break
         else:
             print("Ingrese una opción válida")
