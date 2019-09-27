@@ -1,10 +1,9 @@
-import re
 
-archivo = open("sample.txt",encoding="utf-8")
 
-informacion = archivo.read()
-archivo.close()
+def agregar_articulo(articulo):
+    archivo_lista = open("lista.txt","a")
 
-print(informacion)
+    archivo_lista.write("{}\n".format(articulo))
+    archivo_lista.close()
 
-print(re.search(r"GODOT",informacion))
+agregar_articulo(input("Artículo que quieres agregar: "))
